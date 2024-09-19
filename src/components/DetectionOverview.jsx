@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from 'recharts';
 import DetectionButton from './DetectionButton';
 
-const initialHackingDetectionsData = [
+const hackingDetectionsData = [
   { name: 'OS Version - Major', value: 30 },
   { name: 'Rooting', value: 20 },
   { name: 'Hacking Types', value: 30 },
@@ -13,22 +13,15 @@ const COLORS = ['#8884d8', '#82ca9d', '#ffc658', '#ff8042'];
 
 const DetectionOverview = () => {
   const [activeDetection, setActiveDetection] = useState('OS Version - Major');
-  const [hackingDetectionsData, setHackingDetectionsData] = useState(initialHackingDetectionsData);
 
   const handleDetectionClick = (label) => {
     setActiveDetection(label);
-    // Simulate data change when a button is clicked
-    const newData = initialHackingDetectionsData.map(item => ({
-      ...item,
-      value: item.name === label ? item.value * 1.5 : item.value * 0.8
-    }));
-    setHackingDetectionsData(newData);
   };
 
   return (
     <div className="flex">
       <div className="w-1/3 pr-4">
-        {initialHackingDetectionsData.map(({ name }) => (
+        {hackingDetectionsData.map(({ name }) => (
           <DetectionButton
             key={name}
             label={name}
@@ -51,7 +44,13 @@ const DetectionOverview = () => {
               label
             >
               {hackingDetectionsData.map((entry, index) => (
-                <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                <Cell
+                  key={`cell-${index}`}
+                  fill={COLORS[index % COLORS.length]}
+                  opacity={activeDetection === entry.name ? 1 : 0.6}
+                  stroke={activeDetection === entry.name ? "#000" : "none"}
+                  strokeWidth={2}
+                />
               ))}
             </Pie>
             <Tooltip />

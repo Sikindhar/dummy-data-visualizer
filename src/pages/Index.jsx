@@ -1,5 +1,5 @@
 import React from 'react';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, LineChart, Line } from 'recharts';
 
 const dummyData = [
   { day: 1, attempts: 5 },
@@ -34,6 +34,21 @@ const dummyData = [
   { day: 30, attempts: 7 },
 ];
 
+const hackingBlocksData = [
+  { month: 1, blocks: 1 },
+  { month: 2, blocks: 2 },
+  { month: 3, blocks: 3 },
+  { month: 4, blocks: 4 },
+  { month: 5, blocks: 5 },
+  { month: 6, blocks: 6 },
+  { month: 7, blocks: 7 },
+  { month: 8, blocks: 8 },
+  { month: 9, blocks: 9 },
+  { month: 10, blocks: 10 },
+  { month: 11, blocks: 11 },
+  { month: 12, blocks: 12 },
+];
+
 const StatCard = ({ title, value, percentage }) => (
   <div className="bg-white p-4 rounded-lg shadow-md">
     <h3 className="text-lg font-semibold text-gray-700">{title}</h3>
@@ -51,7 +66,7 @@ const Index = () => {
         <StatCard title="Hacking Attempts" value="5,678" percentage="+1.8%" />
         <StatCard title="Unique Devices Hacking Attempts" value="987" percentage="+3.2%" />
       </div>
-      <div className="bg-white p-6 rounded-lg shadow-md">
+      <div className="bg-white p-6 rounded-lg shadow-md mb-8">
         <h2 className="text-xl font-semibold mb-4">Hacking Attempts Over Time</h2>
         <div className="h-80">
           <ResponsiveContainer width="100%" height="100%">
@@ -62,6 +77,20 @@ const Index = () => {
               <Tooltip />
               <Bar dataKey="attempts" fill="#8884d8" />
             </BarChart>
+          </ResponsiveContainer>
+        </div>
+      </div>
+      <div className="bg-white p-6 rounded-lg shadow-md">
+        <h2 className="text-xl font-semibold mb-4">12-Month Trend of Hacking Blocks</h2>
+        <div className="h-80">
+          <ResponsiveContainer width="100%" height="100%">
+            <LineChart data={hackingBlocksData}>
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis dataKey="month" />
+              <YAxis />
+              <Tooltip />
+              <Line type="monotone" dataKey="blocks" stroke="#8884d8" />
+            </LineChart>
           </ResponsiveContainer>
         </div>
       </div>

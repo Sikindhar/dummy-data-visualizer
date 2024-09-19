@@ -7,7 +7,6 @@ const data = [
   { day: 3, 'Cheat tool': 3, 'ETC': 1, 'Detour security module': 1, 'Debugging': 1, 'Rooted device': 2, 'Source code modification': 1, 'Speed modification': 0, 'Repackaged application': 0, 'Android emulator': 0 },
   { day: 4, 'Cheat tool': 4, 'ETC': 2, 'Detour security module': 1, 'Debugging': 2, 'Rooted device': 2, 'Source code modification': 1, 'Speed modification': 1, 'Repackaged application': 0, 'Android emulator': 0 },
   { day: 5, 'Cheat tool': 5, 'ETC': 2, 'Detour security module': 2, 'Debugging': 2, 'Rooted device': 3, 'Source code modification': 1, 'Speed modification': 1, 'Repackaged application': 1, 'Android emulator': 0 },
-  // ... Add more data points up to day 30
 ];
 
 const COLORS = ['#8884d8', '#82ca9d', '#ffc658', '#ff8042', '#00C49F', '#FFBB28', '#FF8042', '#0088FE', '#00C49F'];

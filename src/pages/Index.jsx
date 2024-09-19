@@ -12,7 +12,26 @@ const dummyData = [
   { day: 8, attempts: 5 },
   { day: 9, attempts: 3 },
   { day: 10, attempts: 6 },
-  // ... add more data points up to day 30
+  { day: 11, attempts: 9 },
+  { day: 12, attempts: 4 },
+  { day: 13, attempts: 7 },
+  { day: 14, attempts: 5 },
+  { day: 15, attempts: 8 },
+  { day: 16, attempts: 6 },
+  { day: 17, attempts: 3 },
+  { day: 18, attempts: 7 },
+  { day: 19, attempts: 4 },
+  { day: 20, attempts: 5 },
+  { day: 21, attempts: 6 },
+  { day: 22, attempts: 8 },
+  { day: 23, attempts: 3 },
+  { day: 24, attempts: 7 },
+  { day: 25, attempts: 5 },
+  { day: 26, attempts: 4 },
+  { day: 27, attempts: 6 },
+  { day: 28, attempts: 9 },
+  { day: 29, attempts: 5 },
+  { day: 30, attempts: 7 },
 ];
 
 const StatCard = ({ title, value, percentage }) => (
@@ -28,9 +47,9 @@ const Index = () => {
     <div className="min-h-screen bg-gray-100 p-8">
       <h1 className="text-2xl font-bold mb-6">Threat Analysis</h1>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-        <StatCard title="Active Devices" value="0" percentage="0.00 %" />
-        <StatCard title="Hacking Attempts" value="0" percentage="0.00 %" />
-        <StatCard title="Unique Devices Hacking Attempts" value="0" percentage="0.00 %" />
+        <StatCard title="Active Devices" value="1,234" percentage="+2.5%" />
+        <StatCard title="Hacking Attempts" value="5,678" percentage="+1.8%" />
+        <StatCard title="Unique Devices Hacking Attempts" value="987" percentage="+3.2%" />
       </div>
       <div className="bg-white p-6 rounded-lg shadow-md">
         <h2 className="text-xl font-semibold mb-4">Hacking Attempts Over Time</h2>

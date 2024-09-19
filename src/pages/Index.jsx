@@ -2,6 +2,10 @@ import React from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, LineChart, Line, PieChart, Pie, Cell } from 'recharts';
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import StatCard from '@/components/StatCard';
+import ChartSection from '@/components/ChartSection';
+import DetectionButton from '@/components/DetectionButton';
+import HackingTypesChart from '@/components/HackingTypesChart';
 
 const dummyData = [
   { day: 1, attempts: 5 },
@@ -38,30 +42,6 @@ const hackingDetectionsData = [
 ];
 
 const COLORS = ['#8884d8', '#82ca9d', '#ffc658', '#ff8042'];
-
-const StatCard = ({ title, value, percentage }) => (
-  <Card className="p-4">
-    <h3 className="text-lg font-semibold text-gray-700">{title}</h3>
-    <p className="text-3xl font-bold mt-2">{value}</p>
-    <p className="text-sm text-blue-500 mt-1">{percentage}</p>
-  </Card>
-);
-
-const ChartSection = ({ title, children }) => (
-  <Card className="p-6 mb-8">
-    <h2 className="text-xl font-semibold mb-4">{title}</h2>
-    <div className="h-80">{children}</div>
-  </Card>
-);
-
-const DetectionButton = ({ label, isActive }) => (
-  <Button
-    variant={isActive ? "default" : "outline"}
-    className="w-full mb-2"
-  >
-    {label}
-  </Button>
-);
 
 const Index = () => {
   return (
@@ -124,6 +104,9 @@ const Index = () => {
             </ResponsiveContainer>
           </div>
         </div>
+      </ChartSection>
+      <ChartSection title="Hacking Types">
+        <HackingTypesChart />
       </ChartSection>
     </div>
   );
